@@ -1,5 +1,5 @@
 import React from "react";
-import Referral from "./Referral";
+import Referral from "../Referral";
 
 describe("Check the referral", () => {
   test.todo("Check the referral box and a checkbox is present");

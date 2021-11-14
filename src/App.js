@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./components/Header";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import SignUpForm from "./Screens/SignUp/SignUpForm";
+import { Routes, Route } from "react-router-dom";
+import OTPCheck from "./Screens/OTPCheck/OTPCheck";
+import Referral from './Screens/Referral/Referral';
+import ReferralSucess from './Screens/Referral/ReferralSucess'
+import ReferralWait from "./Screens/Referral/ReferralWait";
+// import { Referral, ReferralSuccess } from "./Screens/Referral";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<SignUpForm />} />
+      <Route path="otp" element={<OTPCheck />} />
+      <Route path="referral" element={<Referral />} />
+      <Route path="/referral/:candidateId" element={<ReferralSucess />} />
+      <Route path="/referral/wait/:listno" element={<ReferralWait />} />
+    </Routes>
   );
 }
 

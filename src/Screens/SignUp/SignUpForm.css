@@ -1,4 +1,8 @@
-.form-control-error-email{
-    border: 1px solid red;
-    border-radius: 0.25rem;
+.form-input-error-email{
+    border-color:1px solid red;
+}
+
+.form-input{
+    border-color: 10px solid blue;
+    background-color: black;
 }
