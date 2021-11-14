@@ -6,9 +6,9 @@ const [otp, setotp] = useState(new Array(4).fill(""));
 const [verificationmsg, setverificationmsg] = useState("");
 const navigate = useNavigate();
 
-const  randomNumber=(min, max)=> { 
-    return Math.floor(Math.random() * (max - min) + min);
-} 
+// const  randomNumber=(min, max)=> { 
+//     return Math.floor(Math.random() * (max - min) + min);
+// } 
 
 const handleChange = (e,index)=>{
     if(isNaN(e.value)) return false;

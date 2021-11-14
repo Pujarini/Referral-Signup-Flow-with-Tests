@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
-import { Link,Outlet,useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 export default function Referral() {
   const [show, setshow] = useState(false);
   const [referralCode, setreferralCode] = useState("");
-  const [errors, seterrors] = useState(null);
+  // const [errors, seterrors] = useState(null);
   const navigate= useNavigate();
 
   function randomNumber(min, max) { 
@@ -13,7 +13,6 @@ export default function Referral() {
 } 
 
   const handleCode = (e) => {
-    // console.log(e.target.value);
     setreferralCode(e.target.value);
   };
 
@@ -24,10 +23,6 @@ export default function Referral() {
       navigate(`/referral/${uuid()}`);
       // <Outlet/>
     }
-console.log("no match");
-    
-
-    //  console.log(referralCode);
   };
 
 

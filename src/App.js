@@ -1,14 +1,12 @@
 import React from "react";
-import Header from "./components/Header";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SignUpForm from "./Screens/SignUp/SignUpForm";
 import { Routes, Route } from "react-router-dom";
 import OTPCheck from "./Screens/OTPCheck/OTPCheck";
-import Referral from './Screens/Referral/Referral';
-import ReferralSucess from './Screens/Referral/ReferralSucess'
+import Referral from "./Screens/Referral/Referral";
+import ReferralSucess from "./Screens/Referral/ReferralSucess";
 import ReferralWait from "./Screens/Referral/ReferralWait";
-// import { Referral, ReferralSuccess } from "./Screens/Referral";
 
 function App() {
   return (
