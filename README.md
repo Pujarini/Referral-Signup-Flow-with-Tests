@@ -7,6 +7,8 @@ I have created a Project board consisting of all the tasks to be done
 
 Below is a workflow of how I have executed/worked on  the project : 
 
+![SignupFlow](https://user-images.githubusercontent.com/34391629/125035735-cf7e6d80-e0af-11eb-9e0f-c5c7a8589dd0.png)
+
 - [x] Creating a login page (Email , password and confirm password)
 - [x] A user can login only when all the validations are correct 
 
