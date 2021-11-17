@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import {useNavigate} from 'react-router-dom';
+import './OTPCheck.css';
 
 function OTPCheck() {
 const [otp, setotp] = useState(new Array(4).fill(""));
@@ -22,19 +23,24 @@ const handleChange = (e,index)=>{
 const verifyOTP = ()=>{
     if(otp.join('')==="7878"){
         navigate("/referral");
-        
     }
+    if(!otp.join("")){
+        setverificationmsg("Please Enter OTP");
+    }else{
     setverificationmsg("OOPS! you entered wrong OTP ");
+    }
 
 } 
 
 const clearOTP = ()=>{
     setotp([...otp.map(e=> "")])
+    setverificationmsg("")
 }
     
     return (
-        <div>
-           <p>Enter the otp for verification</p>
+        <div className="otp-container">
+           <h4>Enter the otp for verification</h4>
+           <div className="user-input">
            {otp.map((data,index)=>{
                return(
                    <input className="otp-field"
@@ -48,10 +54,13 @@ const clearOTP = ()=>{
                    </input>
                )
            })}
-           <p>{verificationmsg}</p>
-           <p>{`Generated otp is 7878`}</p>
-           <button onClick={clearOTP}>clear</button>
-           <button onClick={verifyOTP}>Verify Otp</button>
+           </div>
+           <p className="error">{verificationmsg}</p>
+           <p className="otp">{`Generated otp is 7878`}</p>
+           <div className="otp-operations">
+           <button onClick={clearOTP} className="clear-otp-button">clear</button>
+           <button onClick={verifyOTP} className="verify-otp-button">Verify Otp</button>
+           </div>
         </div>
     )
 }

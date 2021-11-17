@@ -5,9 +5,12 @@ function ReferralWait() {
     const params = useParams();
     console.log(params);
     return (
-        <div>
-            {`You are in waiting line number ${params.listno}`}
+        <>
+        <div className="referral-wait">
+            <p>{`You are in waiting line number ${params.listno}`}</p>
+            
         </div>
+        </>
     )
 }
 

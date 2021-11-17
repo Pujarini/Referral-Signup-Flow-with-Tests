@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-
+import "./SignUpForm.css";
 
 const Eye = <FontAwesomeIcon className="icon" icon={faEye} />;
 
@@ -13,7 +13,7 @@ function SignUpForm() {
   const [errors, seterrors] = useState({});
   const [show, setshow] = useState(false);
   const passwordRef = useRef();
-  const navigate= useNavigate();
+  const navigate = useNavigate();
 
   const handleValidation = () => {
     let formIsValid = true;
@@ -68,7 +68,7 @@ function SignUpForm() {
   };
 
   const handleChange = (e) => {
-    let fieldValue={...fields};
+    let fieldValue = { ...fields };
     fieldValue[e.target.name] = e.target.value;
     console.log(e.target.name, e.target.value);
     errors[e.target.name] = "";
@@ -83,55 +83,56 @@ function SignUpForm() {
 
   return (
     <div>
-      <form name="referral-form" className="referral" onSubmit={contactSubmit}>
-        <div className="col-md-6">
-          <fieldset>
-            <br />
-            <input
-              refs="email"
-              name="email"
-              type="text"
-              size="30"
-              placeholder="Enter your Email"
-              onChange={handleChange}
-              value={fields["email"]}
-            />
-            <span className="error">{errors["email"]}</span>
-            <br />
-            <input
-              ref={passwordRef}
-              data-testid="password"
-              type="password"
-              placeholder="Enter Password"
-              value={fields["password"]}
-              name="password"
-              onChange={handleChange}
-            ></input>
-            {show ? (
-              <i onClick={showpassword}>{Eye}</i>
-            ) : (
-              <i onClick={showpassword}>{EyeSlash}</i>
-            )}
-            <span className="error">{errors["password"]}</span>
-            <br />
+      <form
+        name="referral-form"
+        className="referral-form"
+        onSubmit={contactSubmit}
+      >
+        <h1>Login</h1>
+        <br />
+        <input
+          className="form-input-email"
+          refs="email"
+          name="email"
+          type="text"
+          size="30"
+          placeholder="Enter your Email"
+          onChange={handleChange}
+          value={fields["email"]}
+        />
+        <span className="error">{errors["email"]}</span>
+        <br />
+        <input
+          className="form-input-password"
+          ref={passwordRef}
+          data-testid="password"
+          type="password"
+          placeholder="Enter Password"
+          value={fields["password"]}
+          name="password"
+          onChange={handleChange}
+        ></input>
+        {show ? (
+          <i onClick={showpassword}>{Eye}</i>
+        ) : (
+          <i onClick={showpassword}>{EyeSlash}</i>
+        )}
+        <span className="error">{errors["password"]}</span>
+        <br />
 
-            <input
-              type="password"
-              data-testid="confirmpassword"
-              placeholder="Confirm Password"
-              value={fields["confirmpassword"]}
-              name="confirmPassword"
-              onChange={handleChange}
-            ></input>
-          </fieldset>
-        </div>
-        <div className="col-md-12">
-          <fieldset>
-            <button id="submit" value="Submit">
-              Login
-            </button>
-          </fieldset>
-        </div>
+        <input
+          className="form-input-confirmpassword"
+          type="password"
+          data-testid="confirmpassword"
+          placeholder="Confirm Password"
+          value={fields["confirmpassword"]}
+          name="confirmPassword"
+          onChange={handleChange}
+        ></input>
+
+        <button className="form-input-submit" id="submit" value="Submit">
+          Login
+        </button>
       </form>
     </div>
   );

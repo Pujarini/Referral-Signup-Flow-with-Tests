@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import SignUpForm from "./Screens/SignUp/SignUpForm";
 import { Routes, Route } from "react-router-dom";
 import OTPCheck from "./Screens/OTPCheck/OTPCheck";

@@ -1,0 +1,55 @@
+.otp-container{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h4{
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+.user-input{
+    display: flex;
+    justify-content: center;
+}
+
+.otp-field{
+    margin: 10px;
+    height: 30px;
+    width: 65px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.error{
+    color: red;
+}
+
+.otp{
+    border: 1px solid red;
+    color: white;
+    padding: 10px;
+}
+
+.otp-operations{
+    display: flex;
+    justify-content: space-between;
+}
+
+.otp-operations button{
+    width: 150px;
+    height: 40px;
+    margin: 25px auto 0px auto;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.otp-operations .clear-otp-button{
+    background: crimson;
+    color: whitesmoke;
+    margin-right: 5px;
+}
